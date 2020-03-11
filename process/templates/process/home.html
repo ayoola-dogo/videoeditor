@@ -1,0 +1,47 @@
+{% extends 'process/base.html' %}
+
+
+{% block style %}
+.btn-group > .dropdown > button {
+  width: 25em !important;
+}
+
+.btn-group>.dropdown:hover>.dropdown-menu {
+  width: 25em !important;
+}
+
+.panel {
+  margin-top: 20px;
+}
+{% endblock style %}
+
+{% block select_video %}
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h3 class="panel-title"><label>Select a Video</label></h3></div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-10 text-center">
+            <div class="btn-group">
+              <div class="dropdown">
+                <button type="button" class="btn btn-default dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span>Video Source</span>
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-center text-center" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="{% url 'choose_file' %}">Choose File</a></li>
+                  <li><a class="dropdown-item" href="{% url 'video_url' %}">Video URL</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock select_video %}
+
+{% block script %}
+{% endblock script %}

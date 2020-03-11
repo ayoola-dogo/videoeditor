@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Document Title=============================================-->
+    <title>VideoShortCuts</title>
+    <!--Stylesheets=============================================-->
+    <!-- Default stylesheets-->
+    <link href="{% static 'lib/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="{% static 'lib/animate.css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/components-font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/et-line-font/et-line-font.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/magnific-popup/dist/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/simple-text-rotator/simpletextrotator.css' %}" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/local.css' %}" />
+    <link id="color-scheme" href="{% static 'css/colors/default.css' %}" rel="stylesheet">
+    <!-- Custom Style -->
+    <style>
+      .panel-heading {
+          background-color: #023A38 !important;
+          border-color: #023A38 !important;
+          border-top: #023A38 !important;
+      }
+
+      .panel {
+          border-top: #023A38 !important;
+      }
+
+      .dropdown>.dropdown-menu {
+        transition: 1s all ease-in-out;
+      }
+
+      .btn-group>.dropdown>.dropdown-menu>li>a:hover {
+          background-color: #606060 !important;
+      }
+
+      .btn-group>.dropdown>.dropdown-menu {
+        top: 200%;
+        transition: 0.7s all ease-in-out;
+      }
+
+      .btn-group>.dropdown:hover>.dropdown-menu {
+        display: block;
+        top: 100%;
+        font-family: 'Volkhov' !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        background-color: #404040 !important;
+      }
+
+      .btn-group>.dropdown>.dropdown-toggle:active {
+        /*Without this, clicking will make it sticky*/
+          pointer-events: none;
+      }
+
+      {% block style %}
+      {% endblock style %}
+    </style>
+  </head>
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+      <div id="wrapper">
+         <nav class="navbar navbar-inverse navbar-custom navbar-fixed-top" role="navigation">
+           <div class="container">
+              <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">VideoShortCuts</a>
+              </div>
+              <div class="collapse navbar-collapse navbar-ex1-collapse" id="custom-collapse">
+                <ul id="active" class="nav navbar-nav side-nav">
+                  <li><a href="#"><i class="fa fa-tachometer"></i> Dashboard</a></li>
+                  <li><a href="{% url 'home' %}"><i class="fa fa-tachometer"></i> Home</a></li>
+                  <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a></li>
+                  <li><a href="#"><i class="fa fa-list-ol"></i> Register</a></li>
+                  <li><a href="#"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">File</a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Check for updates</a></li>
+                      <li><a href="https://michaelgrace.net/videocuts-downloads" target="_blank">Go to Downloads page</a></li>
+                      <li><a href="https://michaelgrace.net/videocuts-downloads" target="_blank">License Agreement</a></li>
+                      <li><a href="https://michaelgrace.net/videocuts-downloads" target="_blank">Register Software</a></li>
+                      <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Tools</a>
+                          <ul class="dropdown-menu">
+                              <li><a href="https://michaelgrace.net/videcutsshareonfacebook" target="_blank">Open Transcriber</a></li>
+                              <li><a href="https://michaelgrace.net/videocutsdownload" target="_blank">Download Video</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Options</a>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a href="https://michaelgrace.net/videocutsdownload" target="_blank">Save Settings</a></li>
+                      <li><a href="https://michaelgrace.net/videocutsdownload" target="_blank">Load Settings</a></li>
+                      <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Presets</a>
+                      <ul class="dropdown-menu">
+                          <li><a href="https://michaelgrace.net/videcutsshareonfacebook" target="_blank">Cut Silence</a></li>
+                          <li><a href="https://michaelgrace.net/videocutsshareontwitter" target="_blank">Create Animation</a></li>
+                          <li><a href="https://michaelgrace.net/linkedin" target="_blank">Shorten Lecture</a></li>
+                      </ul>
+                      </li>
+                  </ul>
+                  </li>
+                  <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Help</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://michaelgrace.net/videocuts-downloads">VideoShorts Home Page</a></li>
+                    <li><a href="https://michaelgrace.net/videocuts-downloads">VideoShorts Tutorials</a></li>
+                    <li><a href="https://michaelgrace.net/videocuts-downloads">Sign Up to Newsletter</a></li>
+                    <li><a href="https://michaelgrace.net/videcutsshareonfacebook" target="_blank">Email us</a></li>
+                    <li><a href="https://michaelgrace.net/videocuts-downloads" target="_blank">Share VideoShorts</a></li>
+                    <li><a class="add-icon" href="https://michaelgrace.net/videocuts-downloads" target="_blank">Like VideoShorts on Facebook</a></li>
+                    <li><a class="add-icon" href="https://michaelgrace.net/videocuts-downloads" target="_blank">Follow VideoShorts on Twitter</a></li>
+                    <li><a href="https://michaelgrace.net/videocuts-downloads" target="_blank">Send Feedback or Suggestion</a></li>
+                    <li><a href="https://michaelgrace.net/videocuts-downloads" target="_blank">Report a Bug</a></li>
+                    <li><a href="https://michaelgrace.net/videcutsshareonfacebook" target="_blank">See Recommended Hardware</a></li>
+                    <li><a href="https://michaelgrace.net/videocuts-downloads" target="_blank">Check for News</a></li>
+                    <li><a href="https://michaelgrace.net/videocuts-downloads" target="_blank">Make Donation</a></li>
+                    <li><a href="https://michaelgrace.net/videocuts-downloads" target="_blank">About VideoShorts</a></li>
+                  </ul>
+                  </li>
+                </ul>
+              </div>
+           </div>
+        </nav>
+        <div id="page-wrapper">
+          {% block select_video %}
+          {% endblock select_video %}
+        </div>
+      </div>
+    </main>
+    <!--JavaScripts=============================================-->
+    <!-- For redundancy===========================================-->
+    <script type="text/javascript">
+      {% block script %}
+      {% endblock script %}
+    </script>
+    <script src="{% static 'lib/jquery/dist/jquery.js' %}"></script>
+    <script src="{% static 'lib/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'lib/wow/dist/wow.js' %}"></script>
+    <script src="{% static 'lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js' %}"></script>
+    <script src="{% static 'lib/smoothscroll.js' %}"></script>
+    <script src="{% static 'lib/magnific-popup/dist/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'lib/simple-text-rotator/jquery.simple-text-rotator.min.js' %}"></script>
+    <script src="{% static 'lib/imagesloaded/imagesloaded.pkgd.js' %}"></script>
+    <script src="{% static 'lib/isotope/dist/isotope.pkgd.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

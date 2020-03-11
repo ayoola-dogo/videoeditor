@@ -1,0 +1,105 @@
+{% extends 'process/base.html' %}
+
+{% block style %}
+.errorlist
+  {
+      color: red;
+  }
+
+.panel .row
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.row
+{
+    padding-top: 20px;
+}
+
+.row #panel-2
+{
+    margin-top: 40px !important;
+}
+
+input
+{
+    color: black;
+}
+
+select {
+    color: black;
+}
+
+.form-2
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form-1, .form-2
+{
+    padding-left: 20px;
+}
+
+#reset {
+    margin-left: 35px;
+}
+
+#id_file
+{
+    color: #66ff00;
+}
+
+{% endblock style %}
+
+{% block select_video %}
+<div class="row">
+  <div class="col-lg-12">
+    <form action="{% url 'choose_file' %}" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <div class="panel panel-default" id="panel-1">
+      <div class="panel-heading"><h3 class="panel-title"><label>Select a Video</label></h3></div>
+      <div class="row">
+        <div class="panel-body">
+            <div class="form-group field-wrapper form-1">
+              <div class="col-md-8">
+                {{ video_form.file.label_tag }} {{ video_form.file }}
+                {{ video_form.file.errors }}
+              </div>
+              <div class="col-md-4">
+                {{ video_form.title.label_tag }} {{ video_form.title }}
+                {{ video_form.title.errors }}
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default" id="panel-2">
+      <div class="panel-heading"><h3 class="panel-title"><label>Input Options</label></h3></div>
+      {% if form.errors %}
+        <p style="color: red;">
+          please correct the error{{ form.errors|pluralize }}
+        </p>
+      {% endif %}
+      <div class="row">
+        <div class="col-sm-6">
+        {% for field in form %}
+          <div class="form-group field-wrapper form-2">
+              {{ field.label_tag }} {{ field }}
+              {{ field.errors }}
+          </div>
+          {% cycle "" "" "</div><div class='col-sm-6'>" %}
+        {% endfor %}
+        </div>
+        <button onclick="dialog()" id="submit" type="submit" class="btn btn-default" value="Submit">Submit</button>
+        <button onclick="reset()" id="reset" type="reset" class="btn btn-default">Reset</button>
+      </div>
+    </div>
+   </form>
+  </div>
+</div>
+{% endblock select_video %}
+
+{% block script %}
+{% endblock script %}
